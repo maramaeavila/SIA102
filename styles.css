@@ -1,0 +1,468 @@
+
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: whitesmoke !important;
+}
+h1{
+    font-size: 25px !important;
+    font-weight: bold !important;
+}
+
+.navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-bottom: solid 3px whitesmoke;
+    color: black;
+    padding: 20px;
+    z-index: 1000; 
+}
+.navbar label{
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 2%;
+}
+.navbar button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+.user-icon {
+    font-size: 40px;
+    cursor: pointer;
+    margin-right: 3%;
+}
+#profileImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#profileImageContainer i {
+    font-size: 40px; 
+    color: black;    
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 300px;
+    overflow: hidden;
+}
+
+.dropdown-item {
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+    color: #0078d7;
+}
+
+.dropdown-item i {
+    margin-right: 10px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 16px;
+    margin-top: 100px;
+  }
+  
+.sidebar a {
+    padding: 10px 12px 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #555555;
+    display: block;
+    margin: 5px;
+    font-weight: 500;
+  }
+
+.sidebar a:hover {
+    color: #0c77a8;
+    background-color: #e0dfdf;
+    border-radius: 5px;
+  }
+
+.sidebar i{
+    margin-right: 10px;
+}  
+  
+.content {
+    margin-left: 320px; 
+    padding: 0px 10px;
+    margin-right: 20px;
+    margin-top: 100px;
+}
+
+.form-control {
+    padding: 6px 12px; 
+    color: #111827; 
+    font-size: 16px; 
+    border: 1px solid #d1d5db; 
+    border-radius: 7px; 
+    background-color: white; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.form-control:focus {
+    border-color: #2563eb; 
+    background-color: white; 
+    border-width: 2px; 
+    outline: none; 
+}
+
+#searchResident{
+    padding: 6px 12px; 
+    color: #111827; 
+    font-size: 16px; 
+    border: 1px solid #d1d5db; 
+    border-radius: 7px; 
+    background-color: white; 
+    width: 20%; 
+    box-sizing: border-box; 
+    margin-left: 75%;
+}
+
+.table-container {
+    max-height: 660px; 
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead {
+    background-color: #f4f4f4;
+    margin: 10px;
+}
+
+th, td {
+    text-align: left;
+    padding: 13px 21px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.pagination button {
+    padding: 8px 16px;
+    background-color: #0c77a8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    animation: fadeIn 0.3s ease; 
+}
+
+.modal-content {
+    width: 50%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.4s ease; 
+    position: relative;
+}
+
+.modal h2 {
+    background-color: #0078d7;
+    color: white;
+    margin: -25px -25px 20px;
+    padding: 15px 20px;
+    border-radius: 5px 5px 0 0;
+    font-size: 1.5rem;
+    text-align: center;
+    box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    color: #555;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    background: none;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #0078d7;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 8px !important;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+#batchDetails .stock-row {
+    margin-bottom: 10px;
+}
+
+#batchDetails input[type="number"] {
+    width: 50%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 80%;
+    }
+
+    #batchDetails input[type="number"] {
+        width: 100%;
+    }
+}
+
+
+.calendar-container {
+    display: flex;
+    margin-top: 20px;
+}
+.calendar {
+    width: 35%;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.calendar-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+.calendar-day {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+.calendar-day:hover {
+    background-color: #ddd;
+}
+.calendar-day.selected {
+    background-color: #007bff;
+    color: white;
+}
+.schedule {
+    width: 65%;
+    padding: 10px;
+    margin-left: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.schedule-header {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.appointment-list {
+    list-style-type: none;
+    padding: 0;
+}
+.appointment-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.fonts{
+    font-size: 1.2em !important;
+}
+
+button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #3b82f6;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.flexend {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#patientDataSection {
+    display: none;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  #patientDataSection h1 {
+    font-size: 25px;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3b82f6;
+    padding-bottom: 5px;
+  }
+
+  #patientDataSection p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    display: flex; 
+    justify-content: space-between; 
+  }
+
+  #patientDataSection p strong {
+    color: #3b82f6;
+    font-weight: bold;
+    min-width: 150px; 
+    display: inline-block; 
+  }
+
+  #patientDataSection span {
+    color: #000;
+    font-weight: normal;
+    text-align: left; 
+    flex: 1; 
+    padding-left: 10px; 
+  }
+
+
+
